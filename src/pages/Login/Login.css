@@ -1,0 +1,11 @@
+.Login{
+    width: 100%;
+}
+.Login__content{
+    margin: auto;
+    width: 250px;
+}
+
+.Login__content p{
+    text-align: center;
+}

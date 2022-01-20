@@ -1,26 +1,62 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import * as React from "react";
+import {
+    Routes,
+    Route,
+} from "react-router-dom";
+import {LoginPage} from "./pages/Login";
+import {AuthProvider} from "./components/AuthProvider";
+import {HomePage} from "./pages/Home";
+import {PostPage} from "./pages/Post";
+import {Layout} from "./components/Layout";
+import {RequireAuth} from "./components/RequireAuth";
+import {createTheme, ThemeProvider} from "@mui/material";
+import {Register} from "./pages/Register";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App() {
+    return (
+        <AuthProvider>
+            <ThemeProvider theme={theme}>
+                <Routes>
+                    <Route element={<Layout/>}>
+                        <Route path="/" element={<HomePage/>}/>
+                        <Route path="/login" element={<LoginPage/>}/>
+                        <Route path="/register" element={<Register/>}/>
+                        <Route
+                            path="/post"
+                            element={
+                                <RequireAuth>
+                                    <PostPage/>
+                                </RequireAuth>
+                            }
+                        />
+                    </Route>
+                </Routes>
+            </ThemeProvider>
+
+        </AuthProvider>
+    );
 }
 
-export default App;
+
+const theme = createTheme({
+       palette: {
+        primary: {
+            main: "#00f792",
+        },
+        secondary: {
+            main: "#ffffff",
+            light: "#00f792",
+            dark: "#930bb8"
+        },
+
+        text: {
+            primary: '#ffffff',
+            secondary: '#ffffff',
+            disabled: "#456"
+
+        },
+        mode: 'dark',
+
+    }
+});
+

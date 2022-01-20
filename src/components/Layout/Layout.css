@@ -1,0 +1,10 @@
+.Layout{
+    height: 100%;
+    overflow: auto;
+}
+.Layout::-webkit-scrollbar{
+    display: none;
+}
+.Layout__main{
+    min-height: calc(100% - 207px);
+}

@@ -1,0 +1,10 @@
+.Form-register__btn{
+    margin-top: 30px;
+}
+.Form-register__btn-create{
+    width: 100%;
+}
+
+.Form-register__controller:nth-child(n+2){
+    margin-top: 20px;
+}

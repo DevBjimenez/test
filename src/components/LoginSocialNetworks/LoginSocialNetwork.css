@@ -1,0 +1,14 @@
+.LoginSocial{
+    margin-top: 30px;
+}
+.LoginSocial > .LoginSocial-button{
+    width: 100%;
+    text-transform: none;
+}
+.LoginSocial > .LoginSocial-button:last-child{
+    margin-top: 10px;
+}
+.LoginSocial > .LoginSocial-button img{
+   width: 30px;
+    margin-right: 20px;
+}

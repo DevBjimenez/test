@@ -1,0 +1,11 @@
+
+.Form-login__btn{
+    margin-top: 30px;
+}
+.Form-login__btn-create{
+    width: 100%;
+}
+
+.Form-login__controller:nth-child(2){
+    margin-top: 20px;
+}
